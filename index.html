@@ -111,7 +111,16 @@ h3{font-size:clamp(1.3rem,1.12rem + .7vw,1.6rem);font-weight:600}
 .url{flex:1;background:var(--white);border:1px solid var(--line);border-radius:999px;
   font-size:.72rem;color:var(--muted);padding:.28rem .7rem;text-align:center;
   overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.frame img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top}
+.slides{position:relative;aspect-ratio:16/10;background:var(--paper)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left top;
+  opacity:0;transition:opacity .55s ease}
+.slides img.on{opacity:1}
+@media(prefers-reduced-motion:reduce){.slides img{transition:none}}
+.pips{display:flex;gap:.35rem;justify-content:center;margin-top:1rem}
+.pips button{width:1.5rem;height:.28rem;padding:0;border:0;border-radius:999px;background:var(--line);cursor:pointer;transition:background .2s}
+.pips button.on{background:var(--accent)}
+.pips button:hover{background:var(--accent-wash)}
+.pips button.on:hover{background:var(--accent)}
 
 /* ── facts ───────────────────────────────── */
 .facts{margin-top:clamp(1.5rem,3vw,2.25rem);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);
@@ -228,12 +237,33 @@ footer a{color:var(--muted)}
           <a class="btn btn-line" href="#trabalhos">Ver trabalhos</a>
         </div>
       </div>
-      <div class="frame">
-        <div class="frame-bar" aria-hidden="true">
-          <span class="dots"><i></i><i></i><i></i></span>
-          <span class="url">drguilhermefeijo.com.br</span>
+      <div>
+        <div class="frame">
+          <div class="frame-bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="url" id="url">drguilhermefeijo.com.br</span>
+          </div>
+          <div class="slides" id="slides">
+          <img fetchpriority="high" src="img/01-ortopedista.jpg" alt="Site do Dr. Guilherme Feijó" class="on" data-url="drguilhermefeijo.com.br" width="1400" height="933">
+          <img src="img/02-kontabio.jpg" alt="Site da Kontabio" class="" data-url="kontabio.com.br" width="1400" height="933">
+          <img src="img/03-biosphere.jpg" alt="Landing page da Biosphere" class="" data-url="biosphere.com.br" width="1400" height="933">
+          <img src="img/04-medcred.jpg" alt="Página da Medcred" class="" data-url="medcredsolucoes.com.br" width="1400" height="933">
+          <img src="img/05-versatilis.jpg" alt="Landing do Versatilis" class="" data-url="marketing.versatilis.com.br" width="1400" height="933">
+          <img src="img/06-dental-sante.jpg" alt="Site da Dental Santé" class="" data-url="dentalsante.com.br" width="1400" height="933">
+          <img src="img/07-coluna-fluida.jpg" alt="Site da Coluna Fluida" class="" data-url="colunafluida.com.br" width="1400" height="933">
+          <img src="img/08-thaisa-leal.jpg" alt="Site da Thaisa Leal" class="" data-url="thaisaleal.com.br" width="1400" height="933">
+          </div>
         </div>
-        <img src="img/01-ortopedista.png" alt="Site do Dr. Guilherme Feijó, ortopedista em Brasília" width="1200" height="800">
+        <div class="pips" id="pips" role="group" aria-label="Escolher projeto">
+        <button type="button" class="on" aria-label="Ver Site do Dr. Guilherme Feijó"></button>
+        <button type="button" class="" aria-label="Ver Site da Kontabio"></button>
+        <button type="button" class="" aria-label="Ver Landing page da Biosphere"></button>
+        <button type="button" class="" aria-label="Ver Página da Medcred"></button>
+        <button type="button" class="" aria-label="Ver Landing do Versatilis"></button>
+        <button type="button" class="" aria-label="Ver Site da Dental Santé"></button>
+        <button type="button" class="" aria-label="Ver Site da Coluna Fluida"></button>
+        <button type="button" class="" aria-label="Ver Site da Thaisa Leal"></button>
+        </div>
       </div>
     </div>
 
@@ -257,7 +287,7 @@ footer a{color:var(--muted)}
       <div class="projects">
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/01-ortopedista.png" alt="Site do Dr. Guilherme Feijó" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/01-ortopedista.jpg" alt="Site do Dr. Guilherme Feijó" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Dr. Guilherme Feijó</h3>
             <p class="where">Ortopedia e traumatologia · Brasília, DF</p>
@@ -273,7 +303,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/02-kontabio.png" alt="Site da Kontabio" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/02-kontabio.jpg" alt="Site da Kontabio" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Kontabio</h3>
             <p class="where">Contabilidade · São Paulo, SP</p>
@@ -289,7 +319,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/03-biosphere.png" alt="Landing page da Biosphere" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/03-biosphere.jpg" alt="Landing page da Biosphere" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Biosphere</h3>
             <p class="where">Indústria de cosméticos · Atibaia, SP</p>
@@ -305,7 +335,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/04-medcred.png" alt="Página de cartas contempladas da Medcred" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/04-medcred.jpg" alt="Página de cartas contempladas da Medcred" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Medcred</h3>
             <p class="where">Consórcios e crédito · São Paulo, SP</p>
@@ -321,7 +351,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/05-versatilis.png" alt="Landing page do Versatilis System" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/05-versatilis.jpg" alt="Landing page do Versatilis System" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Versatilis</h3>
             <p class="where">Software para clínicas · Barueri, SP</p>
@@ -337,7 +367,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/06-dental-sante.png" alt="Site da clínica Dental Santé" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/06-dental-sante.jpg" alt="Site da clínica Dental Santé" width="1200" height="800"></div>
           <div class="proj-body">
             <h3>Dental Santé</h3>
             <p class="where">Odontologia · Jaboatão dos Guararapes, PE</p>
@@ -353,7 +383,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/07-coluna-fluida.png" alt="Site da Coluna Fluida" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/07-coluna-fluida.jpg" alt="Site da Coluna Fluida" width="1200" height="800"></div>
           <div class="proj-body">
             <span class="badge">Implementação</span>
             <h3>Coluna Fluida</h3>
@@ -370,7 +400,7 @@ footer a{color:var(--muted)}
         </article>
 
         <article class="proj">
-          <div class="proj-shot"><img loading="lazy" src="img/08-thaisa-leal.png" alt="Site da nutricionista Thaisa Leal" width="1200" height="800"></div>
+          <div class="proj-shot"><img loading="lazy" src="img/08-thaisa-leal.jpg" alt="Site da nutricionista Thaisa Leal" width="1200" height="800"></div>
           <div class="proj-body">
             <span class="badge">Implementação</span>
             <h3>Thaisa Leal</h3>
@@ -416,7 +446,7 @@ footer a{color:var(--muted)}
         </div>
       </div>
       <div class="cta-shot">
-        <img loading="lazy" src="img/06-dental-sante.png" alt="Site da clínica Dental Santé" width="1200" height="800">
+        <img loading="lazy" src="img/06-dental-sante.jpg" alt="Site da clínica Dental Santé" width="1200" height="800">
       </div>
     </div>
   </section>
@@ -466,5 +496,33 @@ footer a{color:var(--muted)}
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
 </a>
 
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('#slides img')),
+      pips=[].slice.call(document.querySelectorAll('#pips button')),
+      url=document.getElementById('url'),
+      frame=document.querySelector('.frame'),
+      i=0, timer=null,
+      calmo=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function mostrar(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    pips.forEach(function(p,k){p.classList.toggle('on',k===i)});
+    url.textContent=slides[i].dataset.url;
+  }
+  function anda(){ timer=setInterval(function(){mostrar(i+1)},4200); }
+  function para(){ clearInterval(timer); timer=null; }
+
+  pips.forEach(function(p,k){
+    p.addEventListener('click',function(){ para(); mostrar(k); if(!calmo) anda(); });
+  });
+  frame.addEventListener('mouseenter',para);
+  frame.addEventListener('mouseleave',function(){ if(!calmo&&!timer) anda(); });
+  document.getElementById('pips').addEventListener('focusin',para);
+
+  if(!calmo) anda();
+})();
+</script>
 </body>
 </html>
