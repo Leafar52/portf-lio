@@ -3,463 +3,385 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rafael Custódio — Sites e landing pages que convertem</title>
-<meta name="description" content="Landing pages e sites para clínicas, consultórios e negócios locais. Layout aprovado em 48h, site publicado em até 7 dias.">
-<meta property="og:title" content="Rafael Custódio — Sites e landing pages que convertem">
+<title>Rafael Custódio — Sites e landing pages para quem atende cliente</title>
+<meta name="description" content="Landing pages e sites para clínicas, consultórios e negócios locais. Layout aprovado em 48 horas, site no ar em até 7 dias.">
+<meta property="og:title" content="Rafael Custódio — Sites que vendem enquanto você atende">
 <meta property="og:description" content="Landing pages e sites para clínicas, consultórios e negócios locais. Layout em 48h, site no ar em até 7 dias.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ───────────────────────────────────────────────
-   TOKENS
-   ─────────────────────────────────────────────── */
 :root{
-  --ink:#0F1E19;
-  --ink-soft:#1B302A;
-  --paper:#F3F4F1;
-  --white:#FFFFFF;
-  --accent:#0E8F4F;
-  --accent-wash:#DCEFE4;
-  --muted:#64756D;
-  --line:#DCE1DB;
+  --ink:#1A1725;
+  --ink-2:#2A2438;
+  --paper:#F2EFF4;
+  --bone:#FAF8FB;
+  --white:#fff;
+  --accent:#6B4EFF;
+  --accent-deep:#5538E8;
+  --accent-wash:#E9E3FF;
+  --muted:#6F6885;
+  --line:#E0DAE9;
+  --radius:26px;
+  --radius-sm:16px;
 
-  --display:'Bricolage Grotesque',system-ui,sans-serif;
-  --body:'Instrument Sans',system-ui,sans-serif;
+  --sans:'Onest','Helvetica Neue',system-ui,-apple-system,sans-serif;
+  --serif:'Cormorant Garamond','Iowan Old Style','Palatino Linotype',Georgia,serif;
 
-  --gutter:clamp(1.25rem,5vw,4.5rem);
-  --wide:78rem;
-  --read:34rem;
+  --gutter:clamp(1.25rem,4vw,3.5rem);
+  --max:76rem;
+  --read:36rem;
+  --gap:clamp(4.75rem,8vw,6.5rem);
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:clamp(1rem,.95rem + .25vw,1.125rem);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:clamp(1rem,.96rem + .2vw,1.0625rem);
+  line-height:1.62;-webkit-font-smoothing:antialiased;
 }
-img{max-width:100%;display:block}
-a{color:inherit}
-
-h1,h2,h3{
-  font-family:var(--display);
-  font-weight:800;
-  line-height:1.02;
-  letter-spacing:-.025em;
-  margin:0;
-  text-wrap:balance;
-}
-h1{font-size:clamp(2.75rem,1.5rem + 5.6vw,6.25rem)}
-h2{font-size:clamp(2rem,1.3rem + 2.6vw,3.25rem)}
-h3{font-size:clamp(1.375rem,1.1rem + 1vw,1.875rem);font-weight:700}
+img{max-width:100%;display:block;height:auto}
 p{margin:0}
+ul{margin:0;padding:0;list-style:none}
 
-.wrap{max-width:var(--wide);margin-inline:auto;padding-inline:var(--gutter)}
-
-:where(a,button):focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:3px;
-  border-radius:2px;
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em;line-height:1.04;text-wrap:balance}
+h1{font-size:clamp(2.6rem,1.4rem + 4.9vw,5.25rem)}
+h2{font-size:clamp(2.05rem,1.4rem + 2.4vw,3.15rem)}
+h3{font-size:clamp(1.3rem,1.12rem + .7vw,1.6rem);font-weight:600}
+.serif{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  letter-spacing:-.01em;display:block;
 }
 
-/* ───────────────────────────────────────────────
-   BUTTONS
-   ─────────────────────────────────────────────── */
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+.band{padding-top:var(--gap);padding-bottom:var(--gap)}
+
+:where(a,button):focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* ── buttons ─────────────────────────────── */
 .btn{
-  display:inline-block;
-  font-family:var(--body);
-  font-weight:600;
-  font-size:1rem;
-  line-height:1;
-  padding:1.0625rem 1.75rem;
-  background:var(--accent);
-  color:var(--white);
-  text-decoration:none;
-  border-radius:999px;
-  transition:background .18s ease;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:600;font-size:.9875rem;line-height:1;
+  padding:1.0625rem 1.6rem;border-radius:999px;text-decoration:none;
+  background:var(--accent);color:var(--white);
+  transition:background .18s ease,transform .18s ease;
 }
-.btn:hover{background:#0B7540}
-.btn-ghost{
-  background:transparent;
-  color:var(--ink);
-  border:1.5px solid var(--ink);
-  padding:.9375rem 1.625rem;
-}
-.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--accent-deep)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bone)}
+.btn-sm{padding:.8125rem 1.25rem;font-size:.9rem}
 
-/* ───────────────────────────────────────────────
-   HEADER
-   ─────────────────────────────────────────────── */
-.masthead{
-  position:sticky;top:0;z-index:50;
-  background:rgba(243,244,241,.92);
-  backdrop-filter:saturate(1.4) blur(10px);
-  border-bottom:1px solid var(--line);
-}
-.masthead .wrap{
-  display:flex;align-items:center;justify-content:space-between;
-  gap:1.5rem;min-height:4.5rem;
-}
-.wordmark{
-  font-family:var(--display);font-weight:700;font-size:1.0625rem;
-  letter-spacing:-.02em;text-decoration:none;
-}
-.wordmark .dot{color:var(--accent)}
-.masthead nav{display:none;gap:2rem;font-size:.9375rem}
-.masthead nav a{text-decoration:none;color:var(--muted);transition:color .15s}
-.masthead nav a:hover{color:var(--ink)}
-.masthead .btn{padding:.75rem 1.25rem;font-size:.9375rem}
-@media(min-width:62rem){.masthead nav{display:flex}}
+/* ── header ──────────────────────────────── */
+.top{position:sticky;top:0;z-index:60;background:rgba(242,239,244,.9);backdrop-filter:blur(12px) saturate(1.3);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:1.5rem;min-height:4.4rem}
+.mark{font-weight:600;letter-spacing:-.02em;text-decoration:none;font-size:1.0625rem;margin-right:auto}
+.mark i{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:1.2em}
+.top nav{display:none;gap:1.9rem;font-size:.95rem}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover{color:var(--ink)}
+@media(min-width:60rem){.top nav{display:flex}}
 
-/* ───────────────────────────────────────────────
-   HERO
-   ─────────────────────────────────────────────── */
-.hero{padding-top:clamp(3.5rem,8vw,7rem);overflow:hidden}
-.hero-grid{
-  display:grid;gap:clamp(2.5rem,5vw,4rem);
-  align-items:end;
+/* ── hero ────────────────────────────────── */
+.hero{padding-top:clamp(2.25rem,4vw,3.5rem);padding-bottom:var(--gap)}
+.panel{
+  background:var(--white);border-radius:var(--radius);
+  padding:clamp(1.8rem,3.6vw,3rem);
+  display:grid;gap:clamp(2rem,4vw,3rem);align-items:center;
+  box-shadow:0 26px 64px -44px rgba(26,23,37,.55);
 }
-@media(min-width:64rem){
-  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+@media(min-width:62rem){.panel{grid-template-columns:minmax(0,1.06fr) minmax(0,1fr)}}
+.panel h1{margin-top:.9rem;font-size:clamp(2.3rem,1.1rem + 2.85vw,3.4rem)}
+.panel h1 .serif{color:var(--accent)}
+.chip{
+  display:inline-flex;align-items:center;gap:.45rem;align-self:flex-start;
+  background:var(--accent-wash);color:var(--accent-deep);
+  font-size:.875rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
 }
-.hero h1 .line{display:block}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-copy{max-width:30rem;margin-top:1.75rem;color:var(--ink-soft)}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.875rem;margin-top:2.25rem}
+.panel-text p{color:var(--ink-2);max-width:30rem;margin-top:1.15rem}
+.panel-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.9rem}
 
-.hero-facts{
-  display:flex;flex-wrap:wrap;gap:2.5rem;
-  margin-top:3rem;padding-top:1.75rem;border-top:1px solid var(--line);
-}
-.fact b{
-  display:block;font-family:var(--display);font-weight:700;
-  font-size:1.75rem;line-height:1;letter-spacing:-.02em;
-}
-.fact span{font-size:.875rem;color:var(--muted)}
+/* moldura de navegador */
+.frame{border-radius:14px;overflow:hidden;background:var(--white);box-shadow:0 20px 48px -28px rgba(26,23,37,.6);border:1px solid var(--line)}
+.frame-bar{display:flex;align-items:center;gap:.6rem;padding:.55rem .75rem;background:var(--paper);border-bottom:1px solid var(--line)}
+.dots{display:flex;gap:.3rem;flex:none}
+.dots i{width:.58rem;height:.58rem;border-radius:50%;background:#CDC6DB;display:block}
+.url{flex:1;background:var(--white);border:1px solid var(--line);border-radius:999px;
+  font-size:.72rem;color:var(--muted);padding:.28rem .7rem;text-align:center;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.frame img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:left top}
 
-.hero-shot{position:relative}
-.hero-shot img{
-  width:100%;border-radius:4px;
-  box-shadow:0 1px 0 var(--line),0 30px 60px -30px rgba(15,30,25,.45);
-}
-@media(min-width:64rem){
-  .hero-shot{margin-right:calc(var(--gutter) * -1 - 2rem)}
-}
+/* ── facts ───────────────────────────────── */
+.facts{margin-top:clamp(1.5rem,3vw,2.25rem);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);
+  border-radius:var(--radius-sm);overflow:hidden;margin-top:1.25rem}
+@media(min-width:48rem){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.facts li{background:var(--paper);padding:1.4rem 1.25rem}
+.facts b{display:block;font-size:1.65rem;font-weight:600;letter-spacing:-.03em;line-height:1}
+.facts span{display:block;color:var(--muted);font-size:.9rem;margin-top:.4rem}
 
-/* one orchestrated entrance, hero only */
-@media(prefers-reduced-motion:no-preference){
-  .rise{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.22,.8,.3,1) both}
-}
-@keyframes rise{to{opacity:1;transform:none}}
+/* ── projects ────────────────────────────── */
+.work{background:var(--bone)}
+.sec-head{display:grid;gap:1.1rem;margin-bottom:clamp(2.5rem,5vw,3.75rem);max-width:var(--read)}
+.sec-head p{color:var(--muted)}
 
-/* ───────────────────────────────────────────────
-   SECTION HEADS
-   ─────────────────────────────────────────────── */
-section{padding-block:clamp(4.5rem,9vw,8rem)}
-.sec-head{
-  display:grid;gap:1rem;
-  padding-top:1.5rem;border-top:2px solid var(--ink);
-  margin-bottom:clamp(2.5rem,5vw,4rem);
+.projects{display:grid;gap:clamp(2rem,4vw,2.75rem)}
+@media(min-width:56rem){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.proj{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 20px 50px -38px rgba(26,23,37,.55);
 }
-@media(min-width:56rem){
-  .sec-head{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:3rem;align-items:start}
-}
-.sec-head p{color:var(--muted);max-width:var(--read)}
+.proj-shot{background:var(--paper);border-bottom:1px solid var(--line)}
+.proj-shot img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top center}
+.proj-body{padding:clamp(1.5rem,3vw,2rem);display:flex;flex-direction:column;flex:1}
+.proj .where{color:var(--muted);font-size:.9rem;margin-top:.45rem}
+.proj .desc{margin-top:1rem;color:var(--ink-2);font-size:.98rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.25rem}
+.chips li{font-size:.8125rem;color:var(--muted);background:var(--paper);border-radius:999px;padding:.32rem .7rem}
+.proj-foot{display:flex;flex-wrap:wrap;gap:.6rem 1.25rem;align-items:center;margin-top:auto;padding-top:1.5rem}
+.proj-foot a{font-weight:600;font-size:.92rem;text-decoration:none;color:var(--accent-deep);border-bottom:1.5px solid var(--accent-wash);padding-bottom:1px}
+.proj-foot a:hover{border-bottom-color:var(--accent)}
+.badge{font-size:.78rem;font-weight:600;color:var(--ink-2);background:var(--accent-wash);border-radius:999px;padding:.3rem .65rem;align-self:flex-start;margin-bottom:.9rem}
 
-/* ───────────────────────────────────────────────
-   WORK — the loud part
-   ─────────────────────────────────────────────── */
-.work{background:var(--white)}
-.projects{display:grid;gap:clamp(3.5rem,7vw,6.5rem)}
-.project{position:relative}
-.shot{background:var(--paper);border:1px solid var(--line);border-radius:3px;overflow:hidden}
-.shot img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:top center}
-.shot.noimg{
-  display:grid;place-items:center;aspect-ratio:3/2;
-  background:linear-gradient(160deg,var(--ink),var(--ink-soft));
-  color:var(--paper);font-family:var(--display);font-weight:700;
-  font-size:clamp(1.5rem,4vw,2.5rem);padding:2rem;text-align:center;
-}
-.shot.noimg img{display:none}
-
-.card{
-  background:var(--ink);color:var(--paper);
-  padding:clamp(1.75rem,3vw,2.5rem);
-  position:relative;z-index:2;
-}
-@media(min-width:56rem){
-  .card{max-width:33rem;margin-top:-4.5rem;margin-left:clamp(1.5rem,4vw,3.5rem)}
-  .project:nth-child(even) .card{margin-left:auto;margin-right:clamp(1.5rem,4vw,3.5rem)}
-}
-.card h3{color:var(--white)}
-.card .where{
-  color:#9FB5AA;font-size:.9375rem;margin-top:.5rem;
-}
-.card .desc{margin-top:1.125rem;color:#D3DED8;font-size:1rem;line-height:1.55}
-.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.375rem;padding:0;list-style:none}
-.tags li{
-  font-size:.8125rem;color:#BFD2C8;
-  border:1px solid #33493F;border-radius:999px;padding:.3125rem .75rem;
-}
-.role{
-  display:inline-block;font-size:.8125rem;font-weight:600;
-  color:var(--ink);background:var(--accent-wash);
-  border-radius:999px;padding:.3125rem .75rem;margin-bottom:1rem;
-}
-.visit{
-  display:inline-block;margin-top:1.5rem;font-weight:600;font-size:.9375rem;
-  color:var(--white);text-decoration:none;
-  border-bottom:2px solid var(--accent);padding-bottom:2px;
-}
-.visit:hover{border-bottom-color:var(--white)}
-
-/* ───────────────────────────────────────────────
-   PROCESS — a real sequence, so it gets numbers
-   ─────────────────────────────────────────────── */
-.steps{display:grid;gap:0;counter-reset:step;list-style:none;padding:0;margin:0}
-.steps li{
-  counter-increment:step;
-  display:grid;grid-template-columns:auto minmax(0,1fr);
-  gap:clamp(1.25rem,3vw,2.5rem);align-items:baseline;
-  padding-block:1.75rem;border-top:1px solid var(--line);
-}
+/* ── process ─────────────────────────────── */
+.steps{display:grid;gap:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1rem,2.5vw,2rem);
+  padding-top:1.6rem;padding-bottom:1.6rem;border-top:1px solid var(--line)}
 .steps li:last-child{border-bottom:1px solid var(--line)}
-.steps li::before{
-  content:counter(step);
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(1.5rem,3vw,2.25rem);line-height:1;
-  color:var(--accent);min-width:1.5ch;
+.steps li::before{content:counter(s);font-family:var(--serif);font-style:italic;font-size:2rem;line-height:1.1;color:var(--accent);min-width:1.3ch}
+.steps b{display:block;font-weight:600;font-size:1.15rem}
+.steps span{display:block;color:var(--muted);margin-top:.3rem;max-width:var(--read)}
+
+/* ── cta band ────────────────────────────── */
+.cta{background:var(--ink);color:var(--bone);border-radius:var(--radius);overflow:hidden;display:grid}
+@media(min-width:62rem){.cta{grid-template-columns:minmax(0,1fr) minmax(0,.95fr);align-items:center}}
+.cta-text{padding:clamp(2rem,4vw,3.25rem)}
+.cta h2{color:var(--white)}
+.cta h2 .serif{color:#C2B4FF}
+.cta p{color:#CFC7DE;margin-top:1.1rem;max-width:28rem}
+.cta .btn-line{color:var(--bone);box-shadow:inset 0 0 0 1.5px #5B5273}
+.cta .btn-line:hover{background:var(--bone);color:var(--ink)}
+.cta-shot img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:left top}
+
+/* ── services ────────────────────────────── */
+.svc{display:grid;gap:0}
+@media(min-width:48rem){.svc{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,5vw,4rem)}}
+.svc li{padding-top:1.4rem;padding-bottom:1.4rem;border-top:1px solid var(--line)}
+.svc b{display:block;font-weight:600;font-size:1.08rem}
+.svc span{display:block;color:var(--muted);font-size:.95rem;margin-top:.25rem}
+
+/* ── contact ─────────────────────────────── */
+.contact{background:var(--ink);color:var(--bone);border-radius:var(--radius);padding:clamp(2.1rem,5vw,3.5rem)}
+.contact h2{color:var(--white);max-width:16ch}
+.contact h2 .serif{color:#C2B4FF}
+.contact p{color:#CFC7DE;margin-top:1.1rem;max-width:var(--read)}
+.lines{display:grid;gap:.6rem;margin-top:2rem;font-size:1.02rem}
+.lines a{color:var(--bone);text-decoration:none;border-bottom:1px solid #4A4162;padding-bottom:2px}
+.lines a:hover{border-bottom-color:var(--bone)}
+.lines span{color:#9A92AE}
+.contact .btn{margin-top:2.1rem}
+
+footer{padding-top:2.5rem;padding-bottom:3rem;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:space-between}
+footer a{color:var(--muted)}
+
+/* ── floating whatsapp (mobile) ──────────── */
+.float{
+  position:fixed;right:1rem;bottom:1rem;z-index:70;
+  width:3.5rem;height:3.5rem;border-radius:50%;
+  background:#1FAF54;display:grid;place-items:center;
+  box-shadow:0 12px 28px -10px rgba(0,0,0,.5);
 }
-.steps b{font-family:var(--display);font-size:1.25rem;font-weight:700;display:block}
-.steps span{color:var(--muted);display:block;margin-top:.375rem;max-width:var(--read)}
-
-/* ───────────────────────────────────────────────
-   SERVICES
-   ─────────────────────────────────────────────── */
-.services{background:var(--white)}
-.svc{display:grid;gap:0;list-style:none;padding:0;margin:0}
-@media(min-width:48rem){.svc{grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,4.5rem)}}
-.svc li{padding-block:1.5rem;border-top:1px solid var(--line)}
-.svc b{font-family:var(--display);font-size:1.1875rem;font-weight:700;display:block}
-.svc span{color:var(--muted);font-size:.9375rem;display:block;margin-top:.25rem}
-
-/* ───────────────────────────────────────────────
-   CONTACT
-   ─────────────────────────────────────────────── */
-.contact{background:var(--ink);color:var(--paper)}
-.contact .sec-head{border-top-color:#33493F}
-.contact h2{color:var(--white);max-width:18ch}
-.contact .lead{color:#C7D6CE;max-width:var(--read);margin-top:1.25rem}
-.contact-actions{display:flex;flex-wrap:wrap;gap:.875rem;margin-top:2.5rem}
-.contact .btn-ghost{border-color:#5A7268;color:var(--paper)}
-.contact .btn-ghost:hover{background:var(--paper);color:var(--ink)}
-
-footer{background:var(--ink);color:#8CA398;padding-bottom:3.5rem;font-size:.875rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;
-  border-top:1px solid #2A4038;padding-top:2rem}
-footer a{color:#C7D6CE}
+.float svg{width:1.75rem;height:1.75rem;fill:#fff}
+@media(min-width:60rem){.float{display:none}}
 </style>
 </head>
 <body>
 
-<header class="masthead">
+<header class="top">
   <div class="wrap">
-    <a class="wordmark" href="#topo">Rafael Custódio<span class="dot">.</span></a>
+    <a class="mark" href="#topo">Rafael Custódio<i>.</i></a>
     <nav aria-label="Seções">
       <a href="#trabalhos">Trabalhos</a>
-      <a href="#processo">Como funciona</a>
+      <a href="#processo">Processo</a>
       <a href="#servicos">Serviços</a>
     </nav>
-    <!-- TROQUE o número abaixo (formato 55 + DDD + número, sem espaços) -->
-    <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio">Falar no WhatsApp</a>
+    <a class="btn btn-sm" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio">Falar no WhatsApp</a>
   </div>
 </header>
 
 <main id="topo">
 
-  <!-- ══ HERO ══ -->
-  <div class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <h1>
-          <span class="line rise" style="animation-delay:0s">Seu site</span>
-          <span class="line rise" style="animation-delay:.08s">no ar em</span>
-          <span class="line rise" style="animation-delay:.16s"><em>7 dias.</em></span>
-        </h1>
-        <p class="hero-copy rise" style="animation-delay:.26s">
-          Landing pages e sites para clínicas, consultórios e negócios locais.
-          Você aprova o layout em 48 horas e recebe o site publicado e funcionando
-          dentro de uma semana.
-        </p>
-        <div class="hero-actions rise" style="animation-delay:.34s">
-          <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20or%C3%A7amento">Pedir orçamento</a>
-          <a class="btn btn-ghost" href="#trabalhos">Ver trabalhos</a>
-        </div>
-        <div class="hero-facts rise" style="animation-delay:.42s">
-          <div class="fact"><b>48h</b><span>para o layout</span></div>
-          <div class="fact"><b>3 a 7</b><span>dias para publicar</span></div>
-          <div class="fact"><b>4 anos</b><span>construindo sites</span></div>
+  <!-- HERO -->
+  <section class="wrap hero">
+    <div class="panel">
+      <div class="panel-text">
+        <span class="chip">8 projetos no ar</span>
+        <h1>Sites que vendem<span class="serif">enquanto você atende.</span></h1>
+        <p>Landing pages e sites para clínicas, consultórios e negócios locais.
+           Você aprova o layout em 48 horas e recebe o site publicado em até
+           uma semana — com o formulário ligado direto no seu WhatsApp.</p>
+        <div class="panel-actions">
+          <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20or%C3%A7amento%20de%20site">Pedir orçamento</a>
+          <a class="btn btn-line" href="#trabalhos">Ver trabalhos</a>
         </div>
       </div>
-      <div class="hero-shot rise" style="animation-delay:.3s">
-        <img src="img/01-ortopedista.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://drguilhermefeijo.com.br/"
-             alt="Página inicial do site do Dr. Guilherme Feijó, ortopedista em Brasília"
-             width="1200" height="800">
+      <div class="frame">
+        <div class="frame-bar" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="url">drguilhermefeijo.com.br</span>
+        </div>
+        <img src="img/01-ortopedista.png" alt="Site do Dr. Guilherme Feijó, ortopedista em Brasília" width="1200" height="800">
       </div>
     </div>
-  </div>
 
-  <!-- ══ WORK ══ -->
-  <section class="work" id="trabalhos">
+    <ul class="facts">
+      <li><b>48h</b><span>para o layout chegar</span></li>
+      <li><b>3 a 7</b><span>dias para publicar</span></li>
+      <li><b>4 anos</b><span>construindo sites</span></li>
+      <li><b>8</b><span>projetos no ar</span></li>
+    </ul>
+  </section>
+
+  <!-- TRABALHOS -->
+  <section class="work band" id="trabalhos">
     <div class="wrap">
       <div class="sec-head">
-        <h2>Trabalhos</h2>
-        <p>Oito projetos no ar. Clínicas, consultórios, indústria e software —
-           todos construídos para a mesma coisa: transformar visita em conversa.</p>
+        <h2>Trabalhos<span class="serif">que estão no ar agora.</span></h2>
+        <p>Clínica, consultório, indústria e software. Estruturas diferentes,
+           o mesmo objetivo: transformar visita em conversa.</p>
       </div>
 
       <div class="projects">
 
-        <!-- 1 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/01-ortopedista.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://drguilhermefeijo.com.br/"
-                 alt="Site do Dr. Guilherme Feijó" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/01-ortopedista.png" alt="Site do Dr. Guilherme Feijó" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Dr. Guilherme Feijó</h3>
             <p class="where">Ortopedia e traumatologia · Brasília, DF</p>
-            <p class="desc">Site de consultório com cerca de 22 páginas — uma para cada
-              tratamento clínico e cada cirurgia. O botão de agendar consulta acompanha
-              o visitante em todas as seções.</p>
-            <ul class="tags"><li>WordPress</li><li>Elementor</li><li>22 páginas</li><li>Imagens WebP</li></ul>
-            <a class="visit" href="https://drguilhermefeijo.com.br/" target="_blank" rel="noopener">Ver site</a>
+            <p class="desc">Consultório com cerca de 22 páginas — uma para cada tratamento
+              clínico e cada cirurgia. O botão de agendar consulta acompanha o visitante
+              em todas as seções.</p>
+            <ul class="chips"><li>WordPress</li><li>Elementor</li><li>22 páginas</li></ul>
+            <div class="proj-foot">
+              <a href="https://drguilhermefeijo.com.br/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20site%20assim%20para%20meu%20consult%C3%B3rio">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 2 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/02-kontabio.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://kontabio.com.br/"
-                 alt="Site da Kontabio" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/02-kontabio.png" alt="Site da Kontabio" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Kontabio</h3>
             <p class="where">Contabilidade · São Paulo, SP</p>
             <p class="desc">Escritório que atende PMEs, profissionais da saúde e investidores.
               A oferta de um diagnóstico gratuito puxa o visitante para o formulário
               logo na primeira dobra.</p>
-            <ul class="tags"><li>WordPress</li><li>Elementor</li><li>Formulário</li><li>Google Tag Manager</li></ul>
-            <a class="visit" href="https://kontabio.com.br/" target="_blank" rel="noopener">Ver site</a>
+            <ul class="chips"><li>WordPress</li><li>Elementor</li><li>Formulário</li></ul>
+            <div class="proj-foot">
+              <a href="https://kontabio.com.br/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20site%20assim%20para%20minha%20empresa">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 3 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/03-biosphere.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://biosphere.com.br/lp/"
-                 alt="Landing page da Biosphere" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/03-biosphere.png" alt="Landing page da Biosphere" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Biosphere</h3>
             <p class="where">Indústria de cosméticos · Atibaia, SP</p>
-            <p class="desc">Landing B2B para terceirização de produção. Explica o processo
-              em cinco etapas, mostra as certificações e fecha com orçamento
-              respondido em 24 horas.</p>
-            <ul class="tags"><li>Landing B2B</li><li>Formulário qualificado</li><li>WhatsApp</li></ul>
-            <a class="visit" href="https://biosphere.com.br/lp/" target="_blank" rel="noopener">Ver site</a>
+            <p class="desc">Landing B2B para terceirização de produção. Explica o processo em
+              cinco etapas, mostra as certificações e fecha com orçamento respondido
+              em 24 horas.</p>
+            <ul class="chips"><li>Landing B2B</li><li>Formulário qualificado</li></ul>
+            <div class="proj-foot">
+              <a href="https://biosphere.com.br/lp/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20uma%20landing%20B2B%20assim">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 4 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/04-medcred.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://medcredsolucoes.com.br/contemplados-veiculo/"
-                 alt="Página de cartas contempladas da Medcred" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/04-medcred.png" alt="Página de cartas contempladas da Medcred" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Medcred</h3>
             <p class="where">Consórcios e crédito · São Paulo, SP</p>
-            <p class="desc">Catálogo de cartas de consórcio contempladas, com filtro por
-              administradora e um simulador que soma cartas e calcula crédito,
-              entrada, saldo devedor e parcelas.</p>
-            <ul class="tags"><li>WordPress</li><li>Simulador</li><li>Filtro dinâmico</li><li>Reserva por WhatsApp</li></ul>
-            <a class="visit" href="https://medcredsolucoes.com.br/contemplados-veiculo/" target="_blank" rel="noopener">Ver site</a>
+            <p class="desc">Catálogo de cartas contempladas com filtro por administradora e um
+              simulador que soma cartas e calcula crédito, entrada, saldo devedor
+              e parcelas.</p>
+            <ul class="chips"><li>WordPress</li><li>Simulador</li><li>Filtro dinâmico</li></ul>
+            <div class="proj-foot">
+              <a href="https://medcredsolucoes.com.br/contemplados-veiculo/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20preciso%20de%20um%20site%20com%20simulador">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 5 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/05-versatilis.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://marketing.versatilis.com.br/terapeutas/"
-                 alt="Landing page do Versatilis System" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/05-versatilis.png" alt="Landing page do Versatilis System" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Versatilis</h3>
-            <p class="where">Software de gestão para clínicas · Barueri, SP</p>
-            <p class="desc">Landing segmentada para terapeutas. Percorre a dor da rotina,
-              o impacto no dia a dia e a solução, terminando em uma demonstração
+            <p class="where">Software para clínicas · Barueri, SP</p>
+            <p class="desc">Landing segmentada para terapeutas. Percorre a dor da rotina, o
+              impacto no dia a dia e a solução, terminando em uma demonstração
               de 30 minutos.</p>
-            <ul class="tags"><li>Landing SaaS</li><li>Dois formulários</li><li>Google Tag Manager</li></ul>
-            <a class="visit" href="https://marketing.versatilis.com.br/terapeutas/" target="_blank" rel="noopener">Ver site</a>
+            <ul class="chips"><li>Landing SaaS</li><li>Dois formulários</li></ul>
+            <div class="proj-foot">
+              <a href="https://marketing.versatilis.com.br/terapeutas/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20uma%20landing%20para%20meu%20software">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 6 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/06-dental-sante.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://dentalsante.vercel.app/"
-                 alt="Site da clínica Dental Santé" width="1200" height="800">
-          </div>
-          <div class="card">
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/06-dental-sante.png" alt="Site da clínica Dental Santé" width="1200" height="800"></div>
+          <div class="proj-body">
             <h3>Dental Santé</h3>
             <p class="where">Odontologia · Jaboatão dos Guararapes, PE</p>
             <p class="desc">Clínica de odontologia e estética orofacial. Seis blocos de
               tratamento, equipe apresentada por especialidade e agendamento
               integrado a um canal de atendimento.</p>
-            <ul class="tags"><li>WordPress</li><li>Elementor</li><li>Vídeo institucional</li></ul>
-            <a class="visit" href="https://dentalsante.vercel.app/" target="_blank" rel="noopener">Ver site</a>
+            <ul class="chips"><li>WordPress</li><li>Elementor</li><li>Vídeo</li></ul>
+            <div class="proj-foot">
+              <a href="https://dentalsante.vercel.app/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20site%20para%20minha%20cl%C3%ADnica">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 7 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/07-coluna-fluida.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://colunafluida.vercel.app/"
-                 alt="Site da Coluna Fluida" width="1200" height="800">
-          </div>
-          <div class="card">
-            <span class="role">Implementação</span>
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/07-coluna-fluida.png" alt="Site da Coluna Fluida" width="1200" height="800"></div>
+          <div class="proj-body">
+            <span class="badge">Implementação</span>
             <h3>Coluna Fluida</h3>
-            <p class="where">Quiropraxia e terapias manuais · Barueri, SP</p>
-            <p class="desc">Cada queixa — lombar, cervical, ciático, postura — abre o
-              WhatsApp com a mensagem já escrita, então o paciente chega dizendo
-              exatamente o que sente.</p>
-            <ul class="tags"><li>Site estático</li><li>WhatsApp direto</li><li>Carregamento rápido</li></ul>
-            <a class="visit" href="https://colunafluida.vercel.app/" target="_blank" rel="noopener">Ver site</a>
+            <p class="where">Quiropraxia · Barueri, SP</p>
+            <p class="desc">Cada queixa — lombar, cervical, ciático, postura — abre o WhatsApp
+              com a mensagem já escrita, então o paciente chega dizendo exatamente
+              o que sente.</p>
+            <ul class="chips"><li>Site estático</li><li>WhatsApp por queixa</li></ul>
+            <div class="proj-foot">
+              <a href="https://colunafluida.vercel.app/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20site%20para%20minha%20cl%C3%ADnica">Quero um assim</a>
+            </div>
           </div>
         </article>
 
-        <!-- 8 -->
-        <article class="project">
-          <div class="shot">
-            <img loading="lazy" src="img/08-thaisa-leal.png" data-fb="https://image.thum.io/get/width/1200/crop/800/https://novo.thaisaleal.com.br/"
-                 alt="Site da nutricionista Thaisa Leal" width="1200" height="800">
-          </div>
-          <div class="card">
-            <span class="role">Implementação</span>
+        <article class="proj">
+          <div class="proj-shot"><img loading="lazy" src="img/08-thaisa-leal.png" alt="Site da nutricionista Thaisa Leal" width="1200" height="800"></div>
+          <div class="proj-body">
+            <span class="badge">Implementação</span>
             <h3>Thaisa Leal</h3>
             <p class="where">Nutrição · Rio de Janeiro, RJ</p>
-            <p class="desc">Site de conteúdo com blog filtrável por tema, área de receitas
-              e vitrine de e-books e cursos, com captura de e-mail por newsletter.</p>
-            <ul class="tags"><li>WordPress</li><li>Elementor</li><li>Blog</li></ul>
-            <a class="visit" href="https://novo.thaisaleal.com.br/" target="_blank" rel="noopener">Ver site</a>
+            <p class="desc">Site de conteúdo com blog filtrável por tema, área de receitas e
+              vitrine de e-books e cursos, com captura de e-mail por newsletter.</p>
+            <ul class="chips"><li>WordPress</li><li>Elementor</li><li>Blog</li></ul>
+            <div class="proj-foot">
+              <a href="https://novo.thaisaleal.com.br/" target="_blank" rel="noopener">Ver site</a>
+              <a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20site%20de%20conte%C3%BAdo">Quero um assim</a>
+            </div>
           </div>
         </article>
 
@@ -467,56 +389,67 @@ footer a{color:#C7D6CE}
     </div>
   </section>
 
-  <!-- ══ PROCESS ══ -->
-  <section id="processo">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Como funciona</h2>
-        <p>Quatro passos, sem reunião desnecessária. Você aprova o desenho antes
-           de qualquer linha de código ser escrita.</p>
+  <!-- PROCESSO -->
+  <section class="wrap band" id="processo">
+    <div class="sec-head">
+      <h2>Como funciona<span class="serif">do primeiro contato à entrega.</span></h2>
+      <p>Você aprova o desenho antes de qualquer linha de código ser escrita.
+         Sem reunião desnecessária.</p>
+    </div>
+    <ol class="steps">
+      <li><div><b>Você manda o material</b><span>Textos, fotos e referências de sites que você gosta. Se não tiver texto pronto, eu ajudo a escrever.</span></div></li>
+      <li><div><b>Em 48 horas o layout chega</b><span>Você vê o site desenhado antes de ele existir. É aqui que a gente acerta cor, tom e estrutura.</span></div></li>
+      <li><div><b>Ajusto o que precisar</b><span>Rodadas de ajuste até ficar do jeito que você quer. Mudança depois dessa etapa custa caro, por isso ela existe.</span></div></li>
+      <li><div><b>Publico e entrego funcionando</b><span>Domínio, hospedagem, certificado de segurança e formulário ligado ao seu WhatsApp.</span></div></li>
+    </ol>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="wrap">
+    <div class="cta">
+      <div class="cta-text">
+        <h2>Seu site atual<span class="serif">está trazendo paciente?</span></h2>
+        <p>Me manda o link dele, ou do seu Instagram. Em até 10 minutos eu respondo
+           o que daria para melhorar, quanto custa e em quanto tempo fica pronto.</p>
+        <div class="panel-actions">
+          <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20pode%20olhar%20meu%20site%3F">Mandar meu link</a>
+        </div>
       </div>
-      <ol class="steps">
-        <li><div><b>Você manda o material</b><span>Textos, fotos e referências de sites que você gosta. Se não tiver texto pronto, eu ajudo a escrever.</span></div></li>
-        <li><div><b>Em 48 horas o layout chega</b><span>Você vê o site desenhado antes de existir. É aqui que a gente acerta cor, tom e estrutura.</span></div></li>
-        <li><div><b>Ajusto o que precisar</b><span>Rodadas de ajuste até o layout ficar do jeito que você quer.</span></div></li>
-        <li><div><b>Publico e entrego funcionando</b><span>Domínio, hospedagem, certificado de segurança e formulário ligado ao seu WhatsApp. Você recebe o site no ar.</span></div></li>
-      </ol>
+      <div class="cta-shot">
+        <img loading="lazy" src="img/06-dental-sante.png" alt="Site da clínica Dental Santé" width="1200" height="800">
+      </div>
     </div>
   </section>
 
-  <!-- ══ SERVICES ══ -->
-  <section class="services" id="servicos">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>O que eu faço</h2>
-        <p>Trabalho com WordPress e Elementor, Framer e HTML/CSS. A escolha depende
-           do que o site precisa fazer, não do que é mais rápido para mim.</p>
-      </div>
-      <ul class="svc">
-        <li><b>Landing pages</b><span>Página única de conversão, com formulário ligado direto ao seu WhatsApp.</span></li>
-        <li><b>Sites institucionais</b><span>De 1 a 5 páginas, responsivos e rápidos no celular.</span></li>
-        <li><b>Áreas de curso online</b><span>Módulos e aulas organizados para plataformas de infoproduto.</span></li>
-        <li><b>Ajustes em sites existentes</b><span>Correções de HTML e CSS, velocidade e layout quebrado no celular.</span></li>
-        <li><b>Vídeos 3D animados</b><span>Peças curtas com narração e trilha, para divulgação e conteúdo.</span></li>
-        <li><b>Manutenção</b><span>Atualizações, backup e suporte a mudanças de conteúdo.</span></li>
-      </ul>
+  <!-- SERVIÇOS -->
+  <section class="wrap band" id="servicos">
+    <div class="sec-head">
+      <h2>O que eu faço<span class="serif">e com o quê.</span></h2>
+      <p>WordPress e Elementor, Framer, HTML e CSS. A escolha depende do que o site
+         precisa fazer, não do que é mais rápido para mim.</p>
     </div>
+    <ul class="svc">
+      <li><b>Landing pages</b><span>Página única de conversão, com formulário ligado direto ao seu WhatsApp.</span></li>
+      <li><b>Sites institucionais</b><span>De 1 a 5 páginas, responsivos e rápidos no celular.</span></li>
+      <li><b>Áreas de curso online</b><span>Módulos e aulas organizados para plataformas de infoproduto.</span></li>
+      <li><b>Ajustes em sites existentes</b><span>Correção de HTML e CSS, velocidade e layout quebrado no celular.</span></li>
+      <li><b>Vídeos 3D animados</b><span>Peças curtas com narração e trilha, para divulgação e conteúdo.</span></li>
+      <li><b>Manutenção</b><span>Atualizações, backup e suporte a mudanças de conteúdo.</span></li>
+    </ul>
   </section>
 
-  <!-- ══ CONTACT ══ -->
-  <section class="contact" id="contato">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Manda o link do seu site atual</h2>
-        <p class="lead">Ou do seu Instagram. Em até 10 minutos eu respondo o que daria
-           para fazer, quanto custa e em quanto tempo fica pronto. Sem compromisso
-           e sem reunião.</p>
+  <!-- CONTATO -->
+  <section class="wrap band" id="contato" style="padding-top:0">
+    <div class="contact">
+      <h2>Vamos conversar<span class="serif">sem compromisso.</span></h2>
+      <p>Respondo no WhatsApp no mesmo dia. Se preferir e-mail, também funciona —
+         só costuma demorar um pouco mais.</p>
+      <div class="lines">
+        <div><span>WhatsApp </span><a href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio">(68) 99220-3733</a></div>
+        <div><span>E-mail </span><a href="mailto:0nlylia.design@gmail.com">0nlylia.design@gmail.com</a></div>
+        <div><span>Atendimento </span>remoto, para todo o Brasil</div>
       </div>
-      <div class="contact-actions">
-        <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio">Falar no WhatsApp</a>
-        <!-- TROQUE o e-mail abaixo -->
-        <a class="btn btn-ghost" href="mailto:0nlylia.design@gmail.com">Mandar e-mail</a>
-      </div>
+      <a class="btn" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20quero%20um%20or%C3%A7amento%20de%20site">Pedir orçamento</a>
     </div>
   </section>
 
@@ -524,22 +457,14 @@ footer a{color:#C7D6CE}
 
 <footer>
   <div class="wrap">
-    <span>Rafael Custódio — Web designer e front-end. Barueri, SP.</span>
+    <span>Rafael Custódio — web designer e front-end</span>
     <span><a href="https://www.behance.net/rafaeld-leafar" target="_blank" rel="noopener">Behance</a></span>
   </div>
 </footer>
 
-<script>
-/* Usa a imagem local de img/. Se ainda não existir, cai no screenshot remoto;
-   se esse também falhar, mostra o nome do projeto. */
-document.querySelectorAll('img[data-fb]').forEach(function(img){
-  img.addEventListener('error',function(){
-    if(!img.dataset.tried){ img.dataset.tried='1'; img.src=img.dataset.fb; return; }
-    var box=img.closest('.shot')||img.parentElement;
-    box.classList.add('noimg');
-    box.textContent=img.alt.replace(/^(Site|Landing page|P\u00e1gina inicial)[^A-Z]*/,'');
-  });
-});
-</script>
+<a class="float" href="https://wa.me/5568992203733?text=Oi%20Rafael%2C%20vim%20pelo%20seu%20portf%C3%B3lio" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+</a>
+
 </body>
 </html>
